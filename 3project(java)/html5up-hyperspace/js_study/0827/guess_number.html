@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 추측 게임</title>
+    <style>
+      .success {
+        background-color: limegreen;
+        color: white;
+      }
+      .fail {
+        background-color: tomato;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>숫자 추측 게임</h1>
+
+    <p>
+      1부터 100까지의 숫자 중에서 하나의 숫자를 뽑았습니다.<br />
+      당신이 추측할 수 있는 기회는 10번 입니다.<br />
+      추측한 숫자가 높다거나 낮다는 아래에서 표시됩니다.<br />
+    </p>
+
+    <form action="">
+      
+      <input type="text" id="answer" />
+      <input type="button" id = "btn" value="추측" />
+    </form>
+
+    <p id="before_result">이전 결과:</p>
+    <!-- 지금 여기에 보여줘야 하는건데 p태그는 입력태그인가요?아 다시 해보겠슴다 넵 -->
+    <p id="result"></p>
+    
+    <script>
+    let ran = parseInt(Math.random()*100+1);
+    console.log(ran);
+        
+       //1.조작할 대상을 먼저 가져오기
+        let input = document.getElementById('answer');
+        let btn = document.getElementById('btn');
+        let p = document.getElementById('before_result');
+        let rp = document.getElementById('result');
+
+        
+        let cnt = 10;
+        btn.addEventListener('click',function(){
+          
+          if(cnt === 0){
+            rp.innerHTML = '<span class="fail">도전실패</span>'
+            btn.disabled = true;
+          }else{
+            let num = parseInt(input.value);
+
+          if(num === ran){
+            //여기는 왜 innerHTML로 하고 아래는 왜 value로 한건가요?안돼서 value도 써봤어요..
+            //제가 실습하기 전에 이거 어떤 요소에 대해서 사용하는지 구분하라고 얘기했을텐데~
+              rp.innerHTML = '<span class="success">정답입니다</span>';
+              btn.disabled = true;
+              
+          }else if(num > ran){
+            //rp는 입력요소가 아닐텐데 왜 value를 사용한 거죠~? ㅇ
+            //사용자가 입력하는 창에 작은수르 입력해달락 띄울껀가요?
+            rp.innerHTML = '<span class="fail">작은 수를 입력하세요</span>';
+            p.innerHTML += ' '+num;//틀렸을 때 입력한 값을 웹 브라우저에 출력
+          }else if(num < ran){
+            rp.innerHTML = '<span class="fail">큰 수를 입력하세요</span>';
+            p.innerHTML += ' '+num;
+          }
+        }
+        
+        cnt -=1;//기회소진
+        });
+
+    </script>
+  </body>
+</html>

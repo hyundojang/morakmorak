@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jQuery 다루기 </h1>
+    <h1>jQuery 다루기 </h1>
+    <h1>jQuery 다루기 </h1>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ul>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+         Unde nemo dolorum nisi! Temporibus, quos! Placeat, sequi.<br>
+         Esse veniam obcaecati quibusdam nihil similique, <br>
+        nostrum sit ut illo, modi quod ad aspernatur?
+    </p>
+
+    <!-- 아래 jQuery파일을 로드하는 문장이 없으면 jQuery문법 사용X -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        let h1 = document.querySelector('h1');
+        console.log(h1.innerHTML);
+
+        //jQuery
+        console.log($('h1').html()); //h1요소객체 접근 후 값 접근
+
+        //jQuery 다루기 --> jQuery 내용변경 으로 값을 수정
+        $('h1').html('<a href="#"> jQuery 내용변경!</a>');
+
+        console.log($('h1').text());
+    </script>
+
+</body>
+</html>

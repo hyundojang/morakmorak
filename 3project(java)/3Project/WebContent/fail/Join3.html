@@ -1,0 +1,76 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">모락모락</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="login.html">로그인</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">회원가입</h1>
+							<form class="user" action="JoinService" method="post">							
+			              <ul class="join-form">
+			                <li>
+			                  <label>아이디</label>
+			                  <input type="text" name="id" id="id"  placeholder="ID 입력" value="" class="MS_input_txt txt-input input-label" size="10" maxlength="12"><span class="MK_join_id_check_area MK_no_confirm"></span> 
+			               	  <br>
+			                </li>
+			                <li>
+			                  <label>비밀번호</label>
+			                  <input type="password" name="pw" id="pw" placeholder="비밀번호 입력" class="MS_input_txt txt-input input-label" value="" size="15" maxlength="20" onkeyup="check_pwd_length(this, 'password');"> <span class="MK_join_password_check_area MK_no_confirm"></span> 
+			                	<br>
+			                </li>
+			               
+			                <li class="mb_n">
+			                  <label>이메일</label>
+			    			  <input type="text" name="email" id="email" placeholder="이메일 입력" class="MS_input_txt MS_input_txt06 txt-input input-label" size="20" maxlength="35" value=""> <span class="MK_join_email_check_area MK_no_confirm"></span> 
+			                <br>
+			                </li>
+			            	<div><input type="submit" value="회원가입" class="button"/></div>
+			              </ul>
+			              </form>
+			            </div>
+              		 </section>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+

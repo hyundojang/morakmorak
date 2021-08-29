@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" id="data">    
+        <input type="button" id="btn" value="출력"> 
+    </form>
+    <p id="view"></p>
+    <script>
+        //1.조작할 대상을 먼저 가져오기
+        let input = document.getElementById('data');
+        let btn = document.getElementById('btn');
+        let p = document.getElementById('view');
+        
+        //2.대상에 대한 제어하는 코드 작성
+        btn.addEventListener('click',function(){
+            //value: input요소객체만 사용 가능한 속성
+
+            //사용자가 입력한 데이터를 p태그에 적용
+            p.innerHTML = input.value;
+
+           //input.value = '새로운 내용을 입력해주세요';
+           input.value = '';
+
+            //console.log('사용자가 입력한 데이터 >> ', input.value);
+
+            //버튼 비활성화(true:비활성화 / false:활성화)
+            btn.disabled = true;
+        });
+
+    </script>
+</body>
+</html>

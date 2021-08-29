@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id = "img" src="img/dog.gif" alt="이미지 없음"><br>
+    <button id="btn">이미지 변경</button>
+
+    <script>
+        let img = document.getElementById('img');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(){
+            //이미지 변경버튼을 눌렀을때, img태그의 src속성을 변경
+            //img.setAttribute(변경하고 싶은 속성,속성값);
+            img.setAttribute('src','img/poo.gif');
+        });
+    </script>
+</body>
+</html>

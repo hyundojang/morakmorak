@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>오토 슬라이드 - 도트제어 </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+ * { box-sizing:border-box; margin:0; padding:0}
+ li { list-style:none; }
+  .wrap { margin:50px auto; border:3px solid gold; position:relative; 
+            height:400px; overflow:hidden;  }
+
+ /* 슬라이드이미지 영역 */
+ .slide li { float:left; height:400px; }
+ .slide li img { height:100%; }
+
+/* 슬라이드 제어 버튼 영역 */
+ .dot { position:absolute; bottom:20px; left:50%; transform:translateX(-50%)}
+ .dot li { float:left; margin:0 10px;  font-size:40px; background:#000;
+             color:#fff; padding:10px 15px; border-radius:50%;  }
+ .dot li:hover { background:rgba(0,0,0,0.5); cursor:pointer; }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <!-- 슬라이드 이미지 -->
+  <ul class="slide">
+    <li><img src="1.gif" alt="image"></li>
+    <li><img src="2.gif" alt="image"></li>
+    <li><img src="3.gif" alt="image"></li>
+    <li><img src="4.gif" alt="image"></li>
+  </ul>
+  
+  <!-- 도트리스트 - 슬라이드 이미지개수와 같게 설정 -->
+  <ul class="dot">
+    <li></li><li></li><li></li><li></li>
+  </ul>
+</div>
+
+<script>
+ var bw = $(window).width(); // var bw = $(window).outerWidth();
+
+ $(".wrap, .slide li, .slide li img").css({width:bw});
+ $(".slide").css({width: bw *($(".slide li:last").index() + 1)});
+
+ // 윈도우 너비가 변경될 때마다 브라우저 너비 구하기 
+ $(window).resize(function(){
+    bw = $(window).width(); 
+    $(".wrap, .slide li, .slide li img").css({width:bw});
+    $(".slide").css({width: bw *($(".slide li:last").index() + 1)});
+ });  // resize end
+
+ var cnt = 0;
+$(".dot li:first").css("background","rgba(0,0,0,0.5)");
+ setInterval("show()", 3000);  // 3초마다 show 함수를 호출
+ function show(){
+   cnt++;
+    $(".dot li:first").css("background","rgba(0,0,0,0.5)");   
+      if($(".slide li:last").index() >= cnt ) {
+          $(".slide").animate({marginLeft: -bw * cnt });
+          $(".dot li").css("background","#000");
+          $(".dot li").eq(cnt).css("background","rgba(0,0,0,0.5)");
+        
+    } else {
+         $(".dot li").css("background","#000");
+         $(".dot li:first").css("background","rgba(0,0,0,0.5)");
+         $(".slide li:not(:last)").appendTo(".slide");
+         $(".slide").css({marginLeft:0});
+         $(".slide").animate({marginLeft:-bw}, function(){
+           $(".slide li:first").appendTo(".slide");
+           $(".slide").css({marginLeft:0}); 
+           console.log(cnt);
+           cnt=0;  
+    
+         });
+    }
+ }  // show function end
+
+ $(".dot li").click(function(){
+       cnt = $(this).index();
+       $(".slide").animate({marginLeft:-bw * cnt });
+       $(".dot li").css("background","#000");
+       $(this).css("background", "rgba(0,0,0,0.5)");
+ });
+
+</script>
+</body>
+</html>

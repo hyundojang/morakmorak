@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="tit">Hello JS!</h1>
+
+    <script>
+        //조작할 HTML요소를 접근
+        let h1 = document.getElementById('tit');
+
+        // innerHTML: HTML요소의 내용을 접근하거나 설정
+        console.log(h1.innerHTML);//접근
+
+        h1.innerHTML = '<a href="#"> Hello DOM!</a>'; //설정
+
+    </script>
+</body>
+</html>

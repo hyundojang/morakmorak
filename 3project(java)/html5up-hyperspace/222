@@ -1,0 +1,8 @@
+--회원 테이블 생성
+create table mr_member(
+ID varchar2(15) primary key,
+PW varchar2(25) not null,
+EMAIL varchar2(15) unique not null 
+);
+
+select * from mr_member

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main-img{width: 320px; height: 320px;}
+
+        ul{list-style-type: none; padding: 0; margin:5px 0;}
+        .img-item{float:left;}
+        .img-item > img{width: 100px; height: 100px; margin-right: 10px;}
+    </style>
+</head>
+<body>
+    <!-- 태그 속성을 사용한 상품 이미지 변경 -->
+
+    <h1>라떼는 말이야~ 라떼</h1>
+    
+    <div id="coffee-img">
+        <div id="main">
+            <img class="main-img" src="img/cf1.jpg" alt="현재 이미지가 없습니다..">
+        </div>
+        <div id="sub">
+            <ul>
+                <li class="img-item"><img src="img/cf2.jpg" alt="현재 이미지가 없습니다.."></li>
+                <li class="img-item"><img src="img/cf3.jpg" alt="현재 이미지가 없습니다.."></li>
+                <li class="img-item"><img src="img/cf4.jpg" alt="현재 이미지가 없습니다.."></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script>
+        let main_img = document.querySelector('.main-img');
+        let sub_imgs = document.querySelectorAll('.img-item > img');
+
+        for(let i =0; i<sub_imgs.length;i++){
+            sub_imgs[i].addEventListener('click',function(){
+                //서브이미지 클릭 시 메인이미지 위치로 변경
+                let main_src = main_img.getAttribute('src');
+                //console.log(main_src)
+                let sub_src = this.getAttribute('src');
+
+                let temp = main_src;
+                main_src = sub_src;
+                sub_src = temp;
+
+                console.log('메인이미지 주소>>', main_src);
+                console.log('서브이미지 주소 >>',sub_src);
+
+                main_img.setAttribute('src',main_src);
+                this.getAttribute('src',sub_src);
+                
+                       
+            });
+        }
+    </script>
+</body>
+</html>

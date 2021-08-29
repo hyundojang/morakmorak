@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pallete.css">
+</head>
+
+<body>
+    <h1>팔레트</h1>
+    
+    <div id="palette">
+        <div class="box red" data-color="red"></div>
+        <div class="box orange" data-color="orange"></div>
+        <div class="box yellow" data-color="yellow"></div>
+        <div class="box green" data-color="green"></div>
+        <div class="box blue" data-color="blue"></div>
+    </div>
+
+    <h1>색깔 적용결과 </h1>
+    <div id="box"></div>
+
+    <script>
+       
+        //children속성 : 자식요소객체들을 반환하는 속성
+        //let box = document.getElementById('box');
+        let paleBtns = document.getElementById('palette').children
+        
+        for(let i =0; i<paleBtns.length; i++){
+            paleBtns[i].addEventListener('click',function(){
+                //console.log('클릭!');
+                //선택한 div태그의 data-color속성값 가져오기
+                let bgcolor = paleBtns[i].getAttribute('data-color');
+                console.log(bgcolor);
+
+                // 클릭을 했을 때 id 가 'box'인 div태그의 배경색을 변경
+                box.style.backgroundColor = bgcolor;
+            });
+        }
+    </script>
+
+</body>
+
+</html>

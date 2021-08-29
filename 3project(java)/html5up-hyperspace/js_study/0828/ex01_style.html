@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box"></div>
+    <button id="cir">원형</button>
+    <button id="rect">직사각형</button>
+
+    <script>
+        let box = document.getElementById('box');
+        let cirBtn = document.getElementById('cir');
+        let recBtn = document.getElementById('rect');
+
+        cirBtn.addEventListener('click',function(){
+            //원형버튼을 눌렀을 때 div태그의 모양이 원형으로 변경
+            box.style.borderRadius = '100px';
+            box.style.backgroundColor = 'pink';
+            box.style.width = '200px';
+
+        });
+
+        recBtn.addEventListener('click',function(){
+            box.style.width = '400px';
+            box.style.backgroundColor = 'orange';
+            box.style.borderRadius = '0';
+        });
+        
+    </script>
+</body>
+</html>

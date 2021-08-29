@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id = "num" >0</h1>
+    <button id = "upbtn">증가</button>
+    <button id = "downbtn">감소</button>
+  
+    <script>
+        let h1 = document.getElementById('num');
+
+    upbtn.addEventListener('click', function(){
+        h1.innerHTML = parseInt(h1.innerHTML)+ 1; 
+    });
+    downbtn.addEventListener('click', function(){
+        if(parseInt(h1.innerHTML)>0){
+        h1.innerHTML = parseInt(h1.innerHTML)-1;
+        }
+    });
+    </script>
+</body>
+</html>

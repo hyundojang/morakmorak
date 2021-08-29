@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //연산자 종류
+        // - 비교 : <, > <=, >=, !=, ==, ===, !==
+        // - 논리 : &&, ||, !
+        // - 산술 : +, -, *, /, %
+        // - 증감 : ++, --
+        // - 대입 : =, +=, -=, *=, /=, %=
+        // - 삼항 : 조건 ? true일 때: false일 때
+
+        //1. ==(동등연산자) vs ===(일치연산자)
+        console.log(5 == 5);
+        console.log(5 == 2);
+        console.log(5 == '5'); //자동형변환 --> true
+        console.log(5 === '5'); //자동형변환X --> false
+
+        //2. /(나누기 연산) --> 실수형태로 연산
+        console.log(9/2);
+        console.log(parseInt(9/2)); //실수 --> 정수 변환
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 >나만 클릭해!</h1>
+    <h1 >나만 클릭해!</h1>
+    <h1 >나만 클릭해!</h1>
+    <h1 >나만 클릭해!</h1>
+    <h1 >나만 클릭해!</h1>
+
+    <!-- javascript -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        //5개의 h1요소 중에서 하나를 클릭하면 '클릭 완료!' 내용을 출력
+
+        $('h1').on('click',function(){
+            $(this).html('클릭 완료!');
+        });
+       
+
+
+    </script>
+</body>
+</html>

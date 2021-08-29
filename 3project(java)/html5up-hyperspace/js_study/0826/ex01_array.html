@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //배열(array)
+        // - 가변의 크기를 가진 배열
+        //java --> int[] 변수명 = {1,2,3,4} / int[] 변수명 = new int [크기];
+        let array = []; //빈 배열 생성
+        let array2 = [1,2,3,4,5];
+
+        //array2에 있는 데이터 접근
+        console.log(array2[3]);
+
+        //array2의 크기 출력
+        console.log(array2.length);
+
+        //array배열에 데이터 추가
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+        array[3] = 4;
+        array[4] = 5;
+
+        //array배열의 전체 데이터 출력
+        console.log(array);
+
+        //array배열에 데이터 추가 - push()
+        array.push(6);
+        array.push(7);
+        array.push(8);
+        array.push(9);
+        array.push(10);
+
+        console.log(array);
+
+        //array배열에 데이터 삭제
+        //splice(시작 인덱스, 삭제할 갯수)
+        array.splice(5,5);
+        console.log(array);
+
+
+    </script>
+</body>
+</html>

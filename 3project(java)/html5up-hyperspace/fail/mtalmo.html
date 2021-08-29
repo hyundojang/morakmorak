@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--
+   Hyperspace by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+   <head>
+      <title>모락모락</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+   </head>
+   <body class="is-preload">
+
+      <!-- Header -->
+         <header id="header">
+            <a href="index.html" class="title">모락모락</a>
+            <nav>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+               </ul>
+            </nav>
+         </header>
+
+      <!-- Wrapper -->
+         <div id="wrapper" style="background-color:#EDEDED;">
+
+            <!-- Main -->
+               <section id="main" class="wrapper">
+                  <div class="inner">
+                     <h1 class="major" align="center")>사진 업로드</h1>
+                     <center>
+                     <form action = "http://127.0.0.1:9000/upload" method = "POST"
+                           enctype = "multipart/form-data">
+                           <div id="image_container"></div>
+                         <script> function setThumbnail(event) { 
+                              var reader = new FileReader(); 
+                               reader.onload = function(event) { 
+                             var img = document.createElement("img"); 
+                             img.setAttribute("src", event.target.result); 
+                             document.querySelector("div#image_container").appendChild(img); 
+                         }; 
+                             reader.readAsDataURL(event.target.files[0]); 
+                        } 
+                      </script>
+                     
+                      <input type = "file" id="image" accept="image/*" onchange="setThumbnail(event);" name = "file"/>
+                      <input type = "submit"/>
+                      </form>
+                      </center>
+                  </div>
+               </section>
+
+         </div>
+
+      <!-- Footer -->
+         <footer id="footer" class="wrapper alt">
+            <div class="inner">
+               <ul class="menu">
+                  <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+               </ul>
+            </div>
+         </footer>
+
+      <!-- Scripts -->
+         <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.scrollex.min.js"></script>
+         <script src="assets/js/jquery.scrolly.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+
+   </body>
+</html>
